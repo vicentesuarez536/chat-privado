@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat Privado</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- ===== PANTALLA DE AUTENTICACIÓN ===== -->
+    <section id="auth-screen" class="screen active">
+      <div class="auth-card">
+        <div class="auth-header">
+          <h2 id="auth-title">Iniciar sesión</h2>
+          <p id="auth-subtitle">¿No tienes cuenta? <a href="#" id="toggle-auth">Regístrate aquí</a></p>
+        </div>
+
+        <form id="auth-form">
+          <div class="input-group">
+            <label>Usuario</label>
+            <input type="text" id="auth-username" placeholder="Escribe tu usuario" required />
+          </div>
+          <div class="input-group">
+            <label>Contraseña</label>
+            <input type="password" id="auth-password" placeholder="Escribe tu contraseña" required />
+          </div>
+          <button type="submit" id="auth-btn" class="btn-primary">Iniciar sesión</button>
+        </form>
+
+        <div id="auth-message" class="message"></div>
+      </div>
+    </section>
+
+    <!-- ===== PANTALLA DE CHAT ===== -->
+    <section id="chat-screen" class="screen hidden">
+      <header class="chat-header">
+        <div class="header-left">
+          <h1>💬 Chat Privado</h1>
+          <span id="user-badge" class="badge"></span>
+        </div>
+        <button id="btnLogout" class="btn-logout">Cerrar sesión</button>
+      </header>
+
+      <div class="chat-body">
+        <!-- Lista de usuarios -->
+        <aside class="users-sidebar">
+          <div class="sidebar-title">Contactos</div>
+          <ul id="users-list" class="users-list">
+            <!-- Se llenan con JS -->
+          </ul>
+        </aside>
+
+        <!-- Conversación -->
+        <main class="conversation">
+          <div class="conv-header">
+            <span id="contact-name">Selecciona un contacto</span>
+          </div>
+
+          <div class="messages-box" id="messagesBox">
+            <!-- Los mensajes aparecen aquí -->
+            <div class="msg sistema">Selecciona un contacto para empezar a chatear.</div>
+          </div>
+
+          <form id="formMensaje" class="chat-form">
+            <input
+              type="text"
+              id="inputMensaje"
+              placeholder="Escribe un mensaje..."
+              autocomplete="off"
+              disabled
+            />
+            <button type="submit" id="btnEnviar" class="btn-enviar" disabled>Enviar</button>
+          </form>
+        </main>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
